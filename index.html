@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteArtist.com</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            height: 100vh;
+        }
+
+        .left {
+            width: 50%;
+            background: url('fundao.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .left h2 {
+            font-size: 30px;
+        }
+
+        .left h1 {
+            font-size: 50px;
+            margin: 10px 0;
+        }
+
+        .left p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .content {
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+    
+		button {
+            background: #8a2be2;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        button:hover {
+            background: #5d14a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <h2 style="text-align: center;">BEM VINDO AO</h2>
+        <h1 style="text-align: center;">Vote Artist!</h1>
+        </div>
+    </div>
+    <div class="right">
+        <div class="content">
+            <p>No nosso site é possível votar no seu artista favorito!</p>
+			<button style="color: rgb(255, 255, 255); border-radius: 10px; width: 100px; height: 50px; font-family: 'Montserrat', sans-serif;" 
+			onclick="window.location.href= 'outra.html'"> COMEÇAR </button>
+        </div>
+    </div>
+</body>
+</html>
