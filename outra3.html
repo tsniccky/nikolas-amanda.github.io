@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteArtist.com</title>
+    <style>
+        body {
+            background-color: blueviolet;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        table {
+            width: 100%;
+            background-color: rgb(242, 227, 255);
+            color: black;
+            border-collapse: collapse;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        table th {
+            color: rgb(132, 0, 255);
+        }
+        caption {
+            margin-bottom: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="text" id="searchInput" placeholder="Pesquisar artista por nome..." onkeyup="filtrarTabela()">
+
+    <table>
+        <caption>Informações sobre Artistas Musicais</caption>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Ano de Debut</th>
+                <th>Gênero Musical</th>
+                <th>Patrimônio Acumulado</th>
+                <th>Maiores Hits Musicais</th>
+            </tr>
+        </thead>
+        <tbody id="tabelaArtistas">
+            <tr>
+                <td>Taylor Swift</td>
+                <td>35 anos</td>
+                <td>2006</td>
+                <td>Pop e country</td>
+                <td>US$ 1,6 bilhão - 2023</td>
+                <td>Cruel Summer, Shake it Off, Lover...</td>
+            </tr>
+            <tr>
+                <td>FKA Twigs</td>
+                <td>37 anos</td>
+                <td>2012</td>
+                <td>Avant-pop, eletrônico, R&B, trip hop</td>
+                <td>Não divulgado</td>
+                <td>Cellophane, Two Weeks, Kicks</td>
+            </tr>
+            <tr>
+                <td>Kendrick Lamar</td>
+                <td>37 anos</td>
+                <td>2011</td>
+                <td>Hip hop, rap alternativo</td>
+                <td>Não divulgado</td>
+                <td>HUMBLE., Alright, DNA.</td>
+            </tr>
+            <tr>
+                <td>Olivia Rodrigo</td>
+                <td>22 anos</td>
+                <td>2020</td>
+                <td>Pop, pop-rock</td>
+                <td>Não divulgado</td>
+                <td>drivers license, good 4 u, deja vu</td>
+            </tr>
+            <tr>
+                <td>Sabrina Carpenter</td>
+                <td>26 anos</td>
+                <td>2014</td>
+                <td>Pop, pop-rock</td>
+                <td>Não divulgado</td>
+                <td>Nonsense, Feather, Vicious</td>
+            </tr>
+            <tr>
+                <td>Ariana Grande</td>
+                <td>31 anos</td>
+                <td>2013</td>
+                <td>Pop, R&B</td>
+                <td>US$ 240 milhões</td>
+                <td>Thank U, Next, 7 Rings, Problem</td>
+            </tr>
+            <tr>
+                <td>Beyoncé</td>
+                <td>43 anos</td>
+                <td>1997</td>
+                <td>Pop, R&B</td>
+                <td>US$ 500 milhões</td>
+                <td>Single Ladies, Formation, Crazy in Love</td>
+            </tr>
+            <tr>
+                <td>Billie Eilish</td>
+                <td>23 anos</td>
+                <td>2016</td>
+                <td>Pop alternativo, dark pop, electro-pop</td>
+                <td>US$ 100 milhões</td>
+                <td>bad guy, everything i wanted, Happier Than Ever</td>
+            </tr>
+            <tr>
+                <td>Charli XCX</td>
+                <td>32 anos</td>
+                <td>2008</td>
+                <td>Pop, hyperpop</td>
+                <td>US$ 10 milhões</td>
+                <td>Boom Clap, 1999, Boys</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function filtrarTabela() {
+            var input = document.getElementById("searchInput");
+            var filtro = input.value.toLowerCase();
+            var tabela = document.getElementById("tabelaArtistas");
+            var linhas = tabela.getElementsByTagName("tr");
+
+            for (var i = 0; i < linhas.length; i++) {
+                var celulaNome = linhas[i].getElementsByTagName("td")[0];
+                if (celulaNome) {
+                    var nomeTexto = celulaNome.textContent || celulaNome.innerText;
+                    if (nomeTexto.toLowerCase().indexOf(filtro) > -1) {
+                        linhas[i].style.display = "";
+                    } else {
+                        linhas[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
